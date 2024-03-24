@@ -38,10 +38,10 @@ class Http {
         }
     }
 
-    put = async (url: string, body: any = null) => {
+    get2 = async (url: string, body: any = null) => {
         try {
             let request = await fetch(this.baseUrl + url, {
-                method: 'PUT',
+                method: 'GET',
                 headers: { 'content-type': 'application/json' },
                 body
             });

@@ -1,1 +1,46 @@
-<p>crear-lista-reproduccion works!</p>
+<div class="container-crear-ListaReproduccion">
+    <div class="card">
+        <h1 class="title">Crear Lista Reproduccion</h1>
+        <form [formGroup]="crearListaReproduccionComponent" (ngSubmit)="submitForm()" class="form-crear-ListaReproduccion">
+            <div class="input width-45">
+                <label for="titulo">Titulo</label>
+                <input type="text" id="titulo" name="titulo" formControlName="titulo" placeholder="Titulo Lista Reproduccion"
+                    required>
+            </div>
+            <div class="input width-45">
+                <label for="descripcion">Descripción</label>
+                <input type="text" id="descripcion" name="descripcion" formControlName="descripcion"
+                    placeholder="Descripcion Lista Reproduccion" required>
+            </div>
+            <div formArrayName="canciones">
+                <div *ngFor="let cancion of cancionesFormArray.controls; let i = index" class="cancion">
+                    <div [formGroupName]="i">
+                        <div class="input width-45">
+                            <label for="tituloCancion{{i}}">Título de la canción</label>
+                            <input type="text" id="tituloCancion{{i}}" name="tituloCancion{{i}}" formControlName="titulo" placeholder="Título Canción" required>
+                        </div>
+                        <div class="input width-45">
+                            <label for="artista{{i}}">Artista</label>
+                            <input type="text" id="artista{{i}}" name="artista{{i}}" formControlName="artista" placeholder="Artista" required>
+                        </div>
+                        <div class="input width-45">
+                            <label for="album{{i}}">Álbum</label>
+                            <input type="text" id="album{{i}}" name="album{{i}}" formControlName="album" placeholder="Álbum">
+                        </div>
+                        <div class="input width-45">
+                            <label for="anno{{i}}">Año</label>
+                            <input type="number" id="anno{{i}}" name="anno{{i}}" formControlName="anno" placeholder="Año">
+                        </div>
+                        <div class="input width-45">
+                            <label for="genero{{i}}">Género</label>
+                            <input type="text" id="genero{{i}}" name="genero{{i}}" formControlName="genero" placeholder="Género">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mrg-0-auto">
+                <button class="btn btn-primary" type="submit">Guardar Lista Reproduccion</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -5,13 +5,13 @@
 
 :root {
     --white: #FFFFFF;
-    --black: #000000;
-    --primary: #fbf301;
+    --black: #ffffff;
+    --primary: #0f4278;
     --primary-light: #02d46f;
-    --primary-hover: #000000;
-    --secondary: #030504;
-    --secondary-hover: #12a80a;
-    --gray-text: #000000;
+    --primary-hover: #0f4278;
+    --secondary: #a0aca6a5;
+    --secondary-hover: #767676;
+    --gray-text: #8b7e7e5d;
 }
 
 
@@ -125,7 +125,7 @@ body {
     min-width: 120px;
     min-height: 20px;
     background-color: #fff;
-    box-shadow: 0px 4px 16px #A7AFB754;
+    box-shadow: 0px 4px 16px #00000054;
     border-radius: 10px;
     padding: 1rem;
 }
@@ -150,17 +150,17 @@ body {
     font-size: .8rem;
     margin-bottom: .2rem;
     letter-spacing: 0.13px;
-    color: #324D5D;
+    color: #4a4d4f;
 }
 
 .input input, select {
-    background-color: #EBF0F3;
+    background-color: #a0aca6a5;
     border: none;
     padding: .7rem 1.3rem .7rem .7rem;
     border-radius: 7px;
     letter-spacing: 0.17px;
     font-size: 1rem;
-    color: #324D5D;
+    color: #0d4464;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -182,13 +182,13 @@ textarea:focus-visible {
 }
 
 .textarea textarea {
-    background-color: #EBF0F3;
-    border: 1px solid #324D5D;
+    background-color: #a0aca6a5;
+    border: 1px solid #a0aca6a5;
     padding: .7rem 1.3rem .7rem .7rem;
     border-radius: 7px;
     letter-spacing: 0.17px;
     font-size: 1rem;
-    color: #324D5D;
+    color: #a0aca6a5;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     font-weight: 300;
@@ -211,7 +211,7 @@ textarea:focus-visible {
     font-size: .8rem;
     margin-bottom: .2rem;
     letter-spacing: 0.30px;
-    color: #324D5D;
+    color: #a0aca6a5;
 }
 
 
@@ -258,7 +258,7 @@ textarea:focus-visible {
     position: absolute;
     top: -15px;
     right: -15px;
-    box-shadow: 0px 4px 16px #A7AFB754;
+    box-shadow: 0px 4px 16px #a0aca6a5;
 }
 
 .btn-add {

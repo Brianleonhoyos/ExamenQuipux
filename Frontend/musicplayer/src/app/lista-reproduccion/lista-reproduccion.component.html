@@ -4,18 +4,17 @@
         <div class="search-listasreproduccion">
             <div class="form-buscar-listasreproduccion">
                 <div class="input width-80">
-                    <input (keyup)="buscarListasReproduccion($event)" [value]="valorBuscado" type="text"
-                        class="input-search" id="buscar-listasreproduccion" name="buscar-listasreproduccion"
+                    <input [(ngModel)]="valorBuscado" type="text" class="input-search" id="buscar-listasreproduccion" name="buscar-listasreproduccion"
                         placeholder="Buscar por nombre de lista de Reproduccion">
                 </div>
                 <div>
-                    <button class="btn btn-search-listasreproduccion" type="submit">
+                    <button class="btn btn-search-listasreproduccion" type="button" (click)="buscarListasReproduccion($event)">
                         <fa-icon [icon]="faSearch"></fa-icon>
                     </button>
                 </div>
             </div>
             <div class="marg-left-20 container-btn-crear-listasreproduccion">
-                <a routerLink="/crear-listasreproduccion" routerLinkActive="active">
+                <a routerLink="/crear-lista-reproduccion" routerLinkActive="active">
                     <button class="btn btn-add">
                         <fa-icon [icon]="faPlus"></fa-icon>
                     </button>
@@ -26,9 +25,9 @@
     <div class="mensaje-no-listasreproduccion" *ngIf="!validarSiHayListaReproduccion">
         <p>No hay listas de reproducción disponibles.</p>
     </div>
-    <div class="container-cards" *ngIf="validarSiHayListaReproduccion">
-        <div class="card card-listasreproduccion" *ngFor="let lista of ListaReproduccion">
-            <img src="/assets/images/logomusicplayer.png" alt="Imagen example">
+    <div class="container-cards " *ngIf="validarSiHayListaReproduccion">
+        <div class="card card-listasreproduccion " *ngFor="let lista of ListaReproduccion">
+            <img src="assets/images/logo.png" alt="Logo seguros bolivar blanco" width="65" height="60" >
             <p class="title-listasreproduccion">{{ lista.nombre }}</p>
             <p class="descripcion-listasreproduccion">{{ lista.descripcion }}</p>
             <ul>

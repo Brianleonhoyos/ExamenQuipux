@@ -1,0 +1,14 @@
+.container-crear-ListaReproduccion {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.form-crear-ListaReproduccion{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}

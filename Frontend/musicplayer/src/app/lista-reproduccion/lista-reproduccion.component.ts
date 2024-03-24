@@ -34,7 +34,6 @@ export class ListaReproduccionComponent implements OnInit {
   ngOnInit(): void {
     this.obtenerListasReproduccion();
   }
-
   obtenerListasReproduccion() {
     const TraerListReproduccion = Http.instance.get("/lists")
     TraerListReproduccion.then((res: any) => {
@@ -50,25 +49,45 @@ export class ListaReproduccionComponent implements OnInit {
         console.error(err);
       });
   }
-
   buscarListasReproduccion(event: any) {
     if (event.target.value === "") {
       this.obtenerListasReproduccion();
     } else {
-      const value = event.target.value;
-      const filterlistasReproduccion = this.ListaReproduccionAll.filter((listasReproduccion) => {
-        const itemDataTitle = listasReproduccion.nombre.toUpperCase();
-        const itemDataValue = value.toUpperCase();
-        return itemDataTitle.indexOf(itemDataValue) > -1;
-      });
-      if (filterlistasReproduccion.length >= 1) {
-        this.validarSiHayListaReproduccion = true;
-      } else {
-        this.validarSiHayListaReproduccion = false;
-      }
-      this.ListaReproduccion = filterlistasReproduccion;
+      const TraerListReproduccionxNombre = Http.instance.get2("/lists/" + this.valorBuscado)
+      TraerListReproduccionxNombre.then((res: any) => {
+        if (!res) {
+          this.validarSiHayListaReproduccion = false;
+        } else {
+          this.validarSiHayListaReproduccion = true;
+          this.ListaReproduccionAll = res;
+          this.ListaReproduccion = res;
+        }
+      },
+        (err: any) => {
+          console.error(err);
+        });
     }
-    this.valorBuscado = event.target.value;
+
   }
+
+  //buscarListasReproduccion(event: any) {
+  //  if (event.target.value === "") {
+  //    this.obtenerListasReproduccion();
+  //  } else {
+  //    const value = event.target.value;
+  //    const filterlistasReproduccion = this.ListaReproduccionAll.filter((listasReproduccion) => {
+  //      const itemDataTitle = listasReproduccion.nombre.toUpperCase();
+  //      const itemDataValue = value.toUpperCase();
+  //      return itemDataTitle.indexOf(itemDataValue) > -1;
+  //    });
+  //    if (filterlistasReproduccion.length >= 1) {
+  //      this.validarSiHayListaReproduccion = true;
+  //    } else {
+  //      this.validarSiHayListaReproduccion = false;
+  //    }
+  //    this.ListaReproduccion = filterlistasReproduccion;
+  //  }
+  //  this.valorBuscado = event.target.value;
+  //}
 
 }

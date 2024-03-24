@@ -6,9 +6,9 @@
 }
 
 .container-right {
-    background: rgb(13, 85, 186);
-    background: linear-gradient(90deg, rgb(3, 30, 119) 0%, rgb(48, 5, 242) 100%);
-    border-left: 6px solid #f7ff01;
+    background: rgb(13, 52, 107);
+    background: linear-gradient(90deg, rgb(42, 59, 116) 0%, rgb(48, 5, 242) 100%);
+    border-left: 6px solid #000000;
 }
 
 .container-left {
