@@ -1,4 +1,4 @@
-**MusicPlayer**
+# MusicPlayer
 
 **MusicPlayer** es una aplicación de gestión de listas de reproducción de música que permite a los usuarios crear, ver y eliminar listas de reproducción, así como agregar.
 
@@ -15,7 +15,7 @@
 
 **Instalación y Configuración**
 
-**Backend**
+# Backend
 1. Clona este repositorio.
 2. Abre el proyecto backend en tu IDE favorito.
 3. Configura la base de datos PostgreSQL en `application.properties`.
@@ -43,13 +43,13 @@ CREATE TABLE IF NOT EXISTS lista_reproduccion (
 
 4. Ejecuta la aplicación Spring Boot.
 
-**Frontend**
+# Frontend
 1. Clona este repositorio.
 2. Abre la terminal y navega hasta el directorio del proyecto frontend.
 3. Ejecuta `npm install` para instalar las dependencias.
 4. Ejecuta `npm start` para iniciar el servidor de desarrollo de Angular.
 
-**Uso**
+# Uso
 - Accede a la interfaz de usuario de la aplicación en tu navegador.
   - **Clave:** 123456
   - **Usuario:** 2180428
