@@ -1,13 +1,17 @@
 package com.quipux.musicplayer.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "cancion")
 public class CancionModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idCancion", unique = true, nullable = false)
+    @Column(name = "idcancion", unique = true, nullable = false)
     private Long id;
 
     @Column(name = "titulo", nullable = false)
@@ -25,8 +29,9 @@ public class CancionModel {
     @Column(name = "genero", nullable = false)
     private String genero;
 
-    @ManyToOne
-    @JoinColumn(name = "lista_reproduccion_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "idlistareproduccion")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private ListaReproduccionModel listaReproduccionModel;
 
     public Long getId() {

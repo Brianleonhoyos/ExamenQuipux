@@ -1,7 +1,8 @@
 package com.quipux.musicplayer.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
-
 import java.util.List;
 
 @Entity
@@ -10,7 +11,7 @@ public class ListaReproduccionModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idListaReproduccion", unique = true, nullable = false)
+    @Column(name = "idlistareproduccion", unique = true, nullable = false)
     private Long id;
 
     @Column(name = "nombre", nullable = false)
@@ -19,8 +20,9 @@ public class ListaReproduccionModel {
     @Column(name = "descripcion", nullable = false)
     private String descripcion;
 
-    @OneToMany(mappedBy = "listaReproduccionModel", cascade = CascadeType.ALL)
-    private List<CancionModel> canciones;
+    @OneToMany(mappedBy = "listaReproduccionModel", cascade = CascadeType.ALL, orphanRemoval = true)@Column(name = "canciones")
+    @JsonIgnoreProperties("listaReproduccionModel")
+    private List<CancionModel> canciones ;
 
     public Long getId() {
         return id;
