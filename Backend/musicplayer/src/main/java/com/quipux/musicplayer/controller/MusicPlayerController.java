@@ -15,26 +15,27 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/lists")
+@RequestMapping("/api")
 public class MusicPlayerController {
     @Autowired
     private MusicPlayerService musicPlayerService;
 
-    @PostMapping
+    @PostMapping("/lists")
     public ResponseEntity<ListaReproduccionModel> crearListaReproduccion(@RequestBody ListaReproduccionDTO listaReproduccionDTO) {
         if (listaReproduccionDTO.getNombre() == null || listaReproduccionDTO.getNombre().isEmpty()) {
             return ResponseEntity.badRequest().build();
         }
         ListaReproduccionModel savedListaReproduccion = musicPlayerService.save(listaReproduccionDTO);
+        //return ResponseEntity.created(URI.create("/lists/" + savedListaReproduccion.getId())).body(savedListaReproduccion);
         return ResponseEntity.created(URI.create("/lists/" + savedListaReproduccion.getId())).body(savedListaReproduccion);
     }
 
-    @GetMapping
+    @GetMapping("/lists")
     public List<ListaReproduccionModel> obtenerTodasListasReproduccion() {
         return musicPlayerService.findAll();
     }
 
-    @GetMapping("/{listName}")
+    @GetMapping("/lists/{listName}")
     public ResponseEntity<ListaReproduccionModel> obtenerListaReproduccionPorId(@PathVariable String listName) {
         List<ListaReproduccionModel> listaReproduccion = musicPlayerService.findByNombre(listName);
         if (!listaReproduccion.isEmpty()) {
@@ -44,7 +45,7 @@ public class MusicPlayerController {
         }
     }
 
-    @DeleteMapping("/{listName}")
+    @DeleteMapping("/lists/{listName}")
     public ResponseEntity<Void> borrarListaReproduccion(@PathVariable String listName) {
         List<ListaReproduccionModel> listaReproduccion = musicPlayerService.findByNombre(listName);
         if (!listaReproduccion.isEmpty()) {

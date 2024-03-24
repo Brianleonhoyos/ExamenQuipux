@@ -1,1 +1,32 @@
-<p>header works!</p>
+<header class="header">
+    <div class="container-links-header">
+        <div class="logo-header">
+            <img src="assets/images/logo.png" alt="Logo seguros bolivar blanco" width="65" height="60">
+        </div>
+        <div class="links-header">
+            <nav>
+                <ul>
+                    <li>
+                        <a routerLink="/crear-lista-reproduccion" routerLinkActive="active">Crear Lista Reproduccion</a>
+                    </li>
+                    <li >
+                        <a routerLink="/lista-reproduccion" routerLinkActive="active">Listas de Reproduccion</a>
+                    </li>
+                    <li class="dropdown">
+                        <span>
+                            {{this.usuarioData.nombre_completo}}
+                            <fa-icon [icon]="faCaretDown"></fa-icon>
+                        </span>
+                        <div class="dropdown-content">
+                            <ul>
+                                <li>
+                                    <a (click)="logout()" routerLink="/tutoriales">Cerrar Sesión</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>

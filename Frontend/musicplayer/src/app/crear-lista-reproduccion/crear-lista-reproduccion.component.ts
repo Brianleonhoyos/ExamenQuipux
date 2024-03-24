@@ -1,12 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-crear-lista-reproduccion',
-  standalone: true,
-  imports: [],
   templateUrl: './crear-lista-reproduccion.component.html',
-  styleUrl: './crear-lista-reproduccion.component.css'
+  styleUrls: ['./crear-lista-reproduccion.component.css']
 })
-export class CrearListaReproduccionComponent {
+export class CrearListaReproduccionComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
 
 }

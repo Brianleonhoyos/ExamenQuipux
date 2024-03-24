@@ -1,0 +1,55 @@
+{
+	"info": {
+		"_postman_id": "4fb0e1cb-a6cf-4a8e-88c7-c81a84bcb34e",
+		"name": "MusicPlayer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "20824393"
+	},
+	"item": [
+		{
+			"name": "ObtenerTodasLasListas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/lists"
+			},
+			"response": []
+		},
+		{
+			"name": "ObtenerListaReproduccionxNombre",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api//lists/Lista 2"
+			},
+			"response": []
+		},
+		{
+			"name": "EliminarListaReproduccionxNombre",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/api//lists/Mi lista de reproducción"
+			},
+			"response": []
+		},
+		{
+			"name": "CrearListaReproduccion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Mi lista de reproducción 2\",\r\n    \"descripcion\": \"Esta es una lista de reproducción creada para probar el servicio POST\",\r\n    \"canciones\": [\r\n        {\r\n            \"titulo\": \"Canción 1 creada para probar el servicio POST\",\r\n            \"artista\": \"Artista 1\",\r\n            \"album\": \"Álbum 1\",\r\n            \"anno\": 2022,\r\n            \"genero\": \"Género 1\"\r\n        },\r\n        {\r\n            \"titulo\": \"Canción 2 creada para probar el servicio POST\",\r\n            \"artista\": \"Artista 2\",\r\n            \"album\": \"Álbum 2\",\r\n            \"anno\": 2023,\r\n            \"genero\": \"Género 2\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api//lists"
+			},
+			"response": []
+		}
+	]
+}

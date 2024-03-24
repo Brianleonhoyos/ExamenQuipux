@@ -8,10 +8,12 @@ describe('CrearListaReproduccionComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CrearListaReproduccionComponent]
+      declarations: [ CrearListaReproduccionComponent ]
     })
     .compileComponents();
-    
+  });
+
+  beforeEach(() => {
     fixture = TestBed.createComponent(CrearListaReproduccionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

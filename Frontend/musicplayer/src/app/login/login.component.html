@@ -1,1 +1,24 @@
-<p>login works!</p>
+<div class="container-app-login">
+    <div class="width-60 container-left">
+        <div class="card card-login">
+            <div class="width-20">
+                <img src="assets/images/logo.png" alt="Logo music player" width="130" height="120">
+            </div>
+            <form class="width-60 form-login" [formGroup]="userForm" (ngSubmit)="submitForm()">
+                <div class="input">
+                    <label for="numero_documento">Nit o número de documento</label>
+                    <input type="text" id="numero_documento" name="numero_documento" formControlName="numero_documento"
+                        placeholder="Número documento" required>
+                </div>
+                <div class="input">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" name="password" formControlName="password"
+                        placeholder="Contraseña" required>
+                </div>
+                <button class="btn btn-primary" type="submit">Iniciar sesión</button>
+            </form>
+        </div>
+    </div>
+    <div class="width-40 container-right">
+    </div>
+</div>

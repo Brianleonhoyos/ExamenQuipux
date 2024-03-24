@@ -1,7 +1,7 @@
 class Http {
 
     static instance = new Http();
-    baseUrl = 'http://127.0.0.1:8080/';
+    baseUrl = 'http://localhost:8080/api';
 
     get = async (url: string) => {
 
@@ -55,21 +55,6 @@ class Http {
             throw Error(error);
         }
     }
-
-    delete = async (url: string) => {
-        try {
-            let request = await fetch(this.baseUrl + url, {
-                method: 'DELETE',
-            });
-
-            let json = await request.json();
-
-            return json;
-        } catch (error: any) {
-            console.log('Error', error);
-            throw Error(error);
-        }
-    };
 
 }
 

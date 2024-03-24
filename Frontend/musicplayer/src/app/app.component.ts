@@ -1,13 +1,25 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'musicplayer';
+
+  logged = false;
+
+  ngOnInit(): void {
+    const validateLocalStorage = localStorage.getItem('@usuarioLogueado');
+    if (validateLocalStorage) {
+      this.logged = true;
+    } else {
+      this.logged = false;
+    }
+  }
+
+  loggedUser(respuesta: any) {
+    this.logged = respuesta;
+  }
 }
